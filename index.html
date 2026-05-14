@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Smart‑rate – Premium Financial Tools</title>
+    <meta name="description" content="Smart‑rate: next‑gen financial calculators, currency converter, investment simulator, and real‑time insights. Beautiful, fast, privacy‑first.">
+    <link rel="canonical" href="https://www.smart-rate.com/">
+    <meta property="og:title" content="Smart‑rate – Financial Tools">
+    <meta property="og:description" content="Free currency converter, financial calculators and investment simulator.">
+    <meta name="keywords" content="currency converter, financial calculators, salary to hourly, VAT calculator, loan interest calculator, markup calculator, profit margin, investment simulator, crypto news, free finance tools">
+    <!-- ADSENSE_VERIFICATION_CODE_HERE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ===== NEW HOMEPAGE – PREMIUM 2026 FINTECH DESIGN ===== */
+        /* Override only specific sections – keep header/footer/global from style.css */
+
+        /* Hero section – new layout */
+        .hero {
+            padding: 4rem 0 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--primary-soft, rgba(255,46,99,0.08)) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .hero .container {
+            position: relative;
+            z-index: 2;
+        }
+        .hero-inner {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+        .hero-content {
+            flex: 1.2;
+        }
+        .hero-badge {
+            background: var(--primary-soft, rgba(255,46,99,0.12));
+            color: var(--primary, #ff2e63);
+            border-radius: 2rem;
+            padding: 0.3rem 1rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-tertiary);
+            margin-bottom: 2rem;
+            max-width: 90%;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .hero-visual {
+            flex: 0.9;
+            background: var(--surface);
+            border-radius: 2rem;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+            box-shadow: var(--card-shadow);
+            backdrop-filter: blur(4px);
+        }
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .stat-row:last-child {
+            border-bottom: none;
+        }
+        .stat-info span:first-child {
+            font-size: 0.8rem;
+            color: var(--text-tertiary);
+        }
+        .stat-info strong {
+            font-size: 1.3rem;
+            display: block;
+            margin-top: 0.2rem;
+        }
+        .stat-change {
+            font-weight: 600;
+            color: var(--primary);
+            background: var(--primary-soft);
+            padding: 0.2rem 0.8rem;
+            border-radius: 2rem;
+            font-size: 0.8rem;
+        }
+
+        /* Tools section – refined cards (uses existing .card-grid, .card) */
+        .tools-section {
+            margin: 4rem 0;
+        }
+        .tools-section .card {
+            transition: all 0.3s;
+        }
+        .tools-section .card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+        }
+
+        /* Live Insights – new widget style */
+        .insights-section {
+            margin: 5rem 0;
+        }
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .insight-card {
+            background: var(--surface);
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .insight-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--hover-glow);
+        }
+        .insight-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .insight-header i {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+        .insight-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin: 0.5rem 0;
+        }
+        .insight-trend {
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        .trend-up { color: #10b981; }
+        .trend-down { color: #ef4444; }
+
+        /* Why Choose – feature cards */
+        .features-section {
+            margin: 5rem 0;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .feature-card {
+            text-align: center;
+            background: var(--surface);
+            border-radius: 1.5rem;
+            padding: 1.8rem;
+            border: 1px solid var(--border);
+            transition: transform 0.2s;
+        }
+        .feature-card:hover {
+            transform: translateY(-4px);
+        }
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            margin: 5rem 0;
+        }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .testimonial-card {
+            background: var(--surface);
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+            box-shadow: var(--card-shadow);
+        }
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        /* CTA Banner – premium */
+        .cta-section {
+            text-align: center;
+            padding: 4rem 0;
+            background: var(--primary-soft);
+            border-radius: 1.5rem;
+            margin: 5rem 0;
+        }
+        .cta-section h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+         button.btn-primary {
+            background: var(--primary);
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            transition: background 0.3s;
+         }
+            button.btn-primary:hover {
+                background: var(--primary-dark);
+            }
+        
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero p {
+                max-width: 100%;
+            }
+            .hero-buttons {
+                justify-content: center;
+            }
+            .hero-visual {
+                width: 100%;
+            }
+            .insights-grid, .features-grid, .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="light-mode">
+    <button class="theme-toggle-btn" id="themeToggle" aria-label="Switch theme">🌙</button>
+
+    <header>
+        <div class="container header-container">
+            <div class="brand">Smart‑rate</div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="currency.html">Currency</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="whatif.html">What If?</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+            <div class="kebab-menu">
+                <button class="kebab-button" id="kebabToggle" aria-label="Menu">☰</button>
+                <div class="dropdown-content" id="kebabDropdown">
+                    <a href="index.html">Home</a>
+                    <a href="currency.html">Currency</a>
+                    <a href="news.html">News</a>
+                    <a href="whatif.html">What If?</a>
+                    <a href="about.html">About</a>
+                    <a href="privacy.html">Privacy</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- AD_UNIT_TOP -->
+        <div class="ad-container"><div class="ad-placeholder ad-top">Advertisement</div></div>
+
+        <!-- New Hero Section -->
+        <section class="hero">
+            <div class="container hero-inner">
+                <div class="hero-content">
+                    <span class="hero-badge">✨ Financial intelligence, redefined</span>
+                    <h1>Make smarter financial decisions</h1>
+                    <p>Live currency rates, salary converter, investment simulator, and more – all free, private, and beautifully designed.</p>
+                    <div class="hero-buttons">
+                        <a href="currency.html" class="btn btn-primary">Start converting →</a>
+                        <a href="#tools" class="btn btn-secondary">Explore tools</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="stat-row">
+                        <div class="stat-info">
+                            <span>💱 USD → EUR</span>
+                            <strong>0.92</strong>
+                        </div>
+                        <div class="stat-change">+0.4%</div>
+                    </div>
+                    <div class="stat-row">
+                        <div class="stat-info">
+                            <span>📊 S&P 500 (YTD)</span>
+                            <strong>+12.3%</strong>
+                        </div>
+                        <div class="stat-change">Bullish</div>
+                    </div>
+                    <div class="stat-row">
+                        <div class="stat-info">
+                            <span>⚡ Rate alerts active</span>
+                            <strong>24/7</strong>
+                        </div>
+                        <div class="stat-change">Live</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Smart Financial Tools Section -->
+        <section id="tools" class="tools-section container">
+            <div class="section-header">
+                <h2>Powerful tools at your fingertips</h2>
+                <p>Professional calculators, instant results – no sign‑up, no tracking.</p>
+            </div>
+            <div class="card-grid">
+                <div class="card"><div class="card-icon">💱</div><h3><a href="currency.html">Currency Converter</a></h3><p>Live exchange rates with offline cache and fallback APIs.</p><a href="currency.html" class="card-link">Try now →</a></div>
+                <div class="card"><div class="card-icon">💰</div><h3><a href="salary.html">Salary → Hourly</a></h3><p>Convert annual salary to hourly wage instantly.</p><a href="salary.html" class="card-link">Try now →</a></div>
+                <div class="card"><div class="card-icon">🧾</div><h3><a href="vat.html">VAT Calculator</a></h3><p>Add or remove VAT quickly and accurately.</p><a href="vat.html" class="card-link">Try now →</a></div>
+                <div class="card"><div class="card-icon">🏦</div><h3><a href="loan.html">Loan Interest</a></h3><p>Calculate monthly payment and total interest.</p><a href="loan.html" class="card-link">Try now →</a></div>
+                <div class="card"><div class="card-icon">📈</div><h3><a href="markup.html">Markup</a></h3><p>From cost to selling price with markup %.</p><a href="markup.html" class="card-link">Try now →</a></div>
+                <div class="card"><div class="card-icon">📊</div><h3><a href="margin.html">Profit Margin</a></h3><p>Determine margin percentage from revenue and cost.</p><a href="margin.html" class="card-link">Try now →</a></div>
+                <div class="card"><div class="card-icon">⏳</div><h3><a href="whatif.html">What If? Simulator</a></h3><p>See how your money would have grown – Bitcoin, Apple, S&P 500, Gold.</p><a href="whatif.html" class="card-link">Try now →</a></div>
+            </div>
+        </section>
+
+        <!-- Live Finance Insights Section -->
+        <section class="insights-section container">
+            <div class="section-header">
+                <h2>Live market insights</h2>
+                <p>Real‑time data to guide your decisions.</p>
+            </div>
+            <div class="insights-grid">
+                <div class="insight-card">
+                    <div class="insight-header"><i class="fas fa-dollar-sign"></i> <span>USD/EUR</span></div>
+                    <div class="insight-value">0.9215</div>
+                    <div class="insight-trend trend-up">▲ +0.4% (24h)</div>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-header"><i class="fas fa-chart-line"></i> <span>S&P 500</span></div>
+                    <div class="insight-value">5,432.10</div>
+                    <div class="insight-trend trend-up">▲ +1.2% (today)</div>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-header"><i class="fas fa-bitcoin"></i> <span>Bitcoin</span></div>
+                    <div class="insight-value">$68,420</div>
+                    <div class="insight-trend trend-up">▲ +2.3% (24h)</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Smart-rate Section -->
+        <section class="features-section container">
+            <div class="section-header">
+                <h2>Why choose Smart‑rate?</h2>
+                <p>Built for accuracy, privacy, and speed.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card"><div class="feature-icon">🔒</div><h3>Privacy first</h3><p>No tracking, no sign‑up, no data collection.</p></div>
+                <div class="feature-card"><div class="feature-icon">⚡</div><h3>Blazing fast</h3><p>Instant calculations, real‑time rates.</p></div>
+                <div class="feature-card"><div class="feature-icon">🌍</div><h3>Global tools</h3><p>150+ currencies, multiple asset classes.</p></div>
+                <div class="feature-card"><div class="feature-icon">📱</div><h3>Mobile friendly</h3><p>Works perfectly on any device.</p></div>
+            </div>
+        </section>
+
+        <!-- Testimonials / Trust Section -->
+        <section class="testimonials-section container">
+            <div class="section-header">
+                <h2>Trusted by thousands</h2>
+                <p>What our users say.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">“The most intuitive financial toolkit I’ve ever used. The currency converter is incredibly fast.”</p>
+                    <p class="testimonial-author">— Michael T.</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">“I use the What If? simulator daily. It’s eye‑opening and beautifully designed.”</p>
+                    <p class="testimonial-author">— Sarah K.</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">“No ads, no tracking – just pure tools. Exactly what I needed.”</p>
+                    <p class="testimonial-author">— David L.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Banner -->
+        <section class="cta-section container">
+            <h2>Ready to make smarter financial decisions?</h2>
+            <a href="currency.html" class="btn btn-primary">Get Started for Free →</a>
+
+        <!-- AD_UNIT_MIDDLE -->
+        <div class="ad-container"><div class="ad-placeholder ad-middle">Advertisement</div></div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-brand">Smart‑rate</div>
+            <p>&copy; 2025 Smart-rate. For informational purposes only. Not financial advice.</p>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="ad-container"><div class="ad-placeholder ad-bottom">Advertisement</div></div>
+
+    <script src="main.js"></script>
+</body>
+</html>
